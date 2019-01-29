@@ -8,8 +8,8 @@ document.body.addEventListener("paste", function() {
 });
 
 //3. MOUSEOVER EVENT LISTENER
-document.querySelector("h1.logo-heading").addEventListener("mouseover", function(eventInfo) {
-	const { target } = eventInfo;
+document.querySelector("h1.logo-heading").addEventListener("mouseover", function(event) {
+	const { target } = event;
 	target.classList.add("animationClass");
 	setTimeout(function() {
 		target.classList.remove("animationClass");
@@ -31,8 +31,8 @@ document.querySelector("h1.logo-heading").addEventListener("animationstart", fun
 });
 
 //5. MOUSEDOWN EVENT LISTENER
-document.querySelector("header img").addEventListener("mousedown", function(eventInfo) {
-	const { target } = eventInfo;
+document.querySelector("header img").addEventListener("mousedown", function(event) {
+	const { target } = event;
 	target.classList.toggle("filterClass");
 });
 
@@ -63,16 +63,36 @@ document.defaultView.addEventListener("resize", function() {
 //9. DRAG EVENT LISTENER
 
 document.querySelectorAll("img").forEach(el => {
-	el.addEventListener("drag", function(eventInfo) {
-		const { target } = eventInfo;
-		target.style.borderRadius = "15%";
+	el.addEventListener("drag", function(event) {
+		const { target } = event;
+		target.style.display = "none";
 	});
 });
 
 //10. CLICK EVENT
 document.querySelectorAll(".nav-link").forEach(el => {
-	el.addEventListener("click", function(eventInfo) {
-		const { target } = eventInfo;
+	el.addEventListener("click", function(event) {
+		const { target } = event;
 		target.style.fontWeight = "bold";
 	});
+});
+
+//PREVENT DEFAULT
+document.querySelectorAll(".nav-link").forEach(el => {
+	el.addEventListener("click", function(event) {
+		event.preventDefault();
+	});
+});
+
+//PROPAGATION
+
+document.querySelector(".footer p").addEventListener("click", function(event) {
+	const { target } = event;
+	target.style.color = "green";
+	event.stopPropagation();
+});
+
+document.querySelector("footer").addEventListener("click", function(event) {
+	const { target } = event;
+	target.style.backgroundColor = "yellow";
 });
