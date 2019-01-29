@@ -192,6 +192,9 @@ img {
     color: green;
   }
 }
+.filterClass {
+  filter: grayscale(100%);
+}
 .main-navigation {
   width: 100%;
   height: 90px;
