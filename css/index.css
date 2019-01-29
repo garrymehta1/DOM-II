@@ -134,14 +134,14 @@ html {
 }
 html,
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-family: 'Indie Flower', cursive;
+  font-family: "Indie Flower", cursive;
 }
 h1 {
   font-size: 4rem;
@@ -172,6 +172,24 @@ img {
   .container {
     width: 90%;
     margin: 0 5%;
+  }
+}
+.animationClass {
+  animation-name: changeColor;
+  animation-duration: 2s;
+}
+@keyframes changeColor {
+  0% {
+    color: red;
+  }
+  25% {
+    color: yellow;
+  }
+  50% {
+    color: blue;
+  }
+  100% {
+    color: green;
   }
 }
 .main-navigation {
