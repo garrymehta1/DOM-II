@@ -1,13 +1,13 @@
-//COPY EVENT LISTENER
+// 1. COPY EVENT LISTENER
 document.body.addEventListener("copy", function() {
 	prompt("You copied something! Do you want to share it with me? 😍");
 });
-//PASTE EVENT LISTENER
+//2. PASTE EVENT LISTENER
 document.body.addEventListener("paste", function() {
 	alert("You pasted something! 🚀");
 });
 
-//MOUSEOVER EVENT LISTENER
+//3. MOUSEOVER EVENT LISTENER
 document.querySelector("h1.logo-heading").addEventListener("mouseover", function(eventInfo) {
 	const { target } = eventInfo;
 	target.classList.add("animationClass");
@@ -16,7 +16,7 @@ document.querySelector("h1.logo-heading").addEventListener("mouseover", function
 	}, 2000);
 });
 
-//ANIMATION START EVENT LISTENER
+//4. ANIMATION START EVENT LISTENER
 document.querySelector("h1.logo-heading").addEventListener("animationstart", function() {
 	console.log("bla");
 	document.querySelectorAll(".nav-link")[0].style.color = "blue";
@@ -30,13 +30,13 @@ document.querySelector("h1.logo-heading").addEventListener("animationstart", fun
 	}, 2000);
 });
 
-//MOUSEDOWN EVENT LISTENER
+//5. MOUSEDOWN EVENT LISTENER
 document.querySelector("header img").addEventListener("mousedown", function(eventInfo) {
 	const { target } = eventInfo;
 	target.classList.toggle("filterClass");
 });
 
-//KEYDOWN EVENT LISTENER
+//6. KEYDOWN EVENT LISTENER
 document.body.addEventListener("keydown", function() {
 	document.querySelector("header").style.backgroundColor = "black";
 	document.querySelector("header").style.color = "white";
@@ -45,10 +45,34 @@ document.body.addEventListener("keydown", function() {
 	});
 });
 
-//DBLCLICK EVENT LISTENER
+//7. DBLCLICK EVENT LISTENER
 document.querySelectorAll("h4").forEach(el => {
 	el.addEventListener("dblclick", function() {
 		el.style.backgroundColor = "blue";
 		el.style.color = "pink";
+	});
+});
+
+//8. RESIZE EVENT LISTENER
+document.defaultView.addEventListener("resize", function() {
+	document.querySelectorAll(".btn").forEach(el => {
+		el.style.backgroundColor = "green";
+	});
+});
+
+//9. DRAG EVENT LISTENER
+
+document.querySelectorAll("img").forEach(el => {
+	el.addEventListener("drag", function(eventInfo) {
+		const { target } = eventInfo;
+		target.style.borderRadius = "15%";
+	});
+});
+
+//10. CLICK EVENT
+document.querySelectorAll(".nav-link").forEach(el => {
+	el.addEventListener("click", function(eventInfo) {
+		const { target } = eventInfo;
+		target.style.fontWeight = "bold";
 	});
 });
