@@ -1,3 +1,7 @@
+document.querySelector("h1.logo-heading").addEventListener("click", function() {
+	TweenMax.to("#littleImg", 8, { right: 2000 });
+});
+
 // 1. COPY EVENT LISTENER
 document.body.addEventListener("copy", function() {
 	prompt("You copied something! Do you want to share it with me? 😍");
