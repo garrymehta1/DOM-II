@@ -134,14 +134,14 @@ html {
 }
 html,
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-family: 'Indie Flower', cursive;
+  font-family: "Indie Flower", cursive;
 }
 h1 {
   font-size: 4rem;
@@ -173,6 +173,27 @@ img {
     width: 90%;
     margin: 0 5%;
   }
+}
+.animationClass {
+  animation-name: changeColor;
+  animation-duration: 2s;
+}
+@keyframes changeColor {
+  0% {
+    color: red;
+  }
+  25% {
+    color: yellow;
+  }
+  50% {
+    color: blue;
+  }
+  100% {
+    color: green;
+  }
+}
+.filterClass {
+  filter: grayscale(100%);
 }
 .main-navigation {
   width: 100%;
@@ -214,6 +235,18 @@ img {
   font-size: 1.6rem;
   color: #212529;
   text-decoration: none;
+}
+img#littleImg {
+  max-width: 90px;
+  display: block;
+  position: fixed;
+  right: 10px;
+  top: 25px;
+}
+@media (max-width: 500px) {
+  img#littleImg {
+    display: none;
+  }
 }
 .footer {
   width: 100%;
